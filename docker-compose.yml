@@ -8,13 +8,19 @@ nginx:
         - "80:80"
 shinyserv1:
     build: kuzmenkov/shinyserv
+    volumes:
+        - /srv/shiny-server/:/srv/shiny-server/
     ports:
         - "3838"
 shinyserv2:
     build: kuzmenkov/shinyserv
+    volumes:
+        - /srv/shiny-server2/:/srv/shiny-server/
     ports:
         - "3838"
 shinyserv3:
     build: kuzmenkov/shinyserv
+    volumes:
+        - /srv/shiny-server1/:/srv/shiny-server/
     ports:
         - "3838"
